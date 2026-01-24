@@ -1,7 +1,6 @@
 class Solution {
 public:
     int sumOfUnique(vector<int>& nums) {
-        
         unordered_map <int,int> freq;
 
         for(int i = 0 ; i<nums.size() ; i++){
@@ -9,12 +8,11 @@ public:
         }
 
         int sum = 0 ;
-        for(auto numbers : freq){
-            if(numbers.second == 1){
-                sum += numbers.first;
+        for(auto &p : freq){
+            if(p.second == 1){
+                sum = sum + p.first;
             }
         }
-
         return sum;
     }
 };
